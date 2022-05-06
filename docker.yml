@@ -1,0 +1,37 @@
+---
+- 
+ hosts: all
+ #this varaible that will apply to a play
+
+ vars:
+   container_count: 4
+   default_container: docker 
+   default_container_image: ubuntu 
+   default_container_command: sleep 1d
+ tasks:
+   - name: install the required package
+     apt:
+       pkg:
+         - ca-certificates
+         - curl
+         - gnupg 
+         - lsb-release
+       state: latest 
+       update_cache: true 
+   - name: add docker gpg key
+     apt_key:
+       url: https://download.docker.com/linux/ubuntu/gpg focal stable
+       state: present 
+   - name: add docker registry
+     apt_repository:
+       repo: https://download.docker.com/linux/ubuntu focal stable 
+       state: present 
+   - name: update apt and install docker 
+     apt:
+       pkg:
+         - docker-ce
+         - docker-ce-cli
+         - containerd.io 
+         - docker-compose-plugin
+       state: latest 
+       update_cache: true
