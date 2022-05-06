@@ -57,3 +57,9 @@
      register: result
    - debug:
        var: result.host_info
+   - name: get info on docker container 
+     docker_container_info:
+     refister: containerinfo 
+   - name: print information about contianer 
+     debug: 
+       var.containerinfo
