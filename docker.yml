@@ -20,7 +20,7 @@
        update_cache: true 
    - name: add docker gpg key
      apt_key:
-       url: https://download.docker.com/linux/ubuntu/gpg focal stable
+       url: https://download.docker.com/linux/ubuntu/gpg 
        state: present 
    - name: add docker registry
      apt_repository:
