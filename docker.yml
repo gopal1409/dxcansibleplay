@@ -52,3 +52,8 @@
        command: "{{default_container_command}}"
        state: present 
      with_sequence: count={{container_count}}
+   - name: get info on docker  hosts
+     docker_host_info:
+     register: result
+   - debug:
+       var: result.host_info
