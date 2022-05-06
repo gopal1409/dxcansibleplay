@@ -59,7 +59,7 @@
        var: result.host_info
    - name: get info on docker container 
      docker_container_info:
-     name: docker1
+       name: docker1
      register: containerinfo 
    - name: print information about contianer 
      debug: 
