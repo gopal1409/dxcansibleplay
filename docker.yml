@@ -24,7 +24,7 @@
        state: present 
    - name: add docker registry
      apt_repository:
-       repo: https://download.docker.com/linux/ubuntu focal stable 
+       repo: deb https://download.docker.com/linux/ubuntu focal stable 
        state: present 
    - name: update apt and install docker 
      apt:
