@@ -33,6 +33,9 @@
          - docker-ce-cli
          - containerd.io 
          - docker-compose-plugin
+         - python3-pip
+         - virtualenv
+         - python3-setuptools
        state: latest 
        update_cache: true
    - name: pull docker image 
