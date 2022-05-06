@@ -1,0 +1,20 @@
+---
+- 
+ hosts: client
+ #this varaible that will apply to a play
+
+ vars:
+   motd_centos: "welcome to centos ansible rock\n"
+   motd_ubuntu: "welcome to ubuntu ansible rock\n"
+ tasks:
+   - name: contfigure a motd for centos system (message of the day)
+     copy:
+       content: "{{ motd_centos }}"
+       dest: /etc/motd
+     when: ansible_distribution == "CentOS"
+   - name: configure a motd for ubuntu system
+     copy:
+       content: "{{ motd_ubuntu }}"
+       dest: /etc/motd
+     when: ansible_distribution == "Ubuntu"   
+#by default ansible do gather fact it should always aware of your os
