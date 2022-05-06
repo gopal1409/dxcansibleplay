@@ -41,6 +41,7 @@
        dest: /usr/share/tomcat 
        owner: tomcat
        group: tomcat 
+       remote_src: yes
        extra_opts: "--strip-components=1" 
 
 
