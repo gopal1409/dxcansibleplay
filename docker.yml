@@ -38,6 +38,9 @@
          - python3-setuptools
        state: latest 
        update_cache: true
+   - name: install docker python3-pip 
+     pip: 
+       name: docker
    - name: pull docker image 
      docker_image:
        name: "{{default_container_image}}"
